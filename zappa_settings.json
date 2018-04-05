@@ -1,0 +1,10 @@
+{
+    "dev": {
+        "app_function": "webhook_to_sqs.app",
+        "aws_region": "us-east-1",
+        "profile_name": "lambda",
+        "project_name": "webhook-to-sqs",
+        "runtime": "python3.6",
+        "s3_bucket": "zappa-8znhmd9bn"
+    }
+}

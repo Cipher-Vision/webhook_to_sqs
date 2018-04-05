@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+
+flask = "*"
+"lispmeister-zappa" = {git = "https://github.com/lispmeister/Zappa.git", editable = true}
+"github-webhook" = "*"
+
+
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"
