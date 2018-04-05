@@ -3,6 +3,8 @@ from flask import Flask
 import logging
 import boto3
 import datetime
+import json
+
 
 logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
 
@@ -37,7 +39,7 @@ def set_message_attributes(source, timestamp, event_type):
 def send_to_sqs(attributes, message):
     response = sqs.send_message(
         QueueUrl=queue_url,
-        DelaySeconds=10,
+        MessageGroupId='1',
         MessageAttributes=attributes,
         MessageBody=message)
     logging.debug("Event enqueued to SQS: %s", response['MessageId'])
@@ -55,7 +57,7 @@ def on_push(data):
     logging.debug("Received push event.")
     timestamp = datetime.datetime.utcnow().isoformat()
     attributes = set_message_attributes('Github repo', timestamp, 'push')
-    send_to_sqs(attributes, data)
+    send_to_sqs(attributes, json.dumps(data))
 
 
 # Define a handler for the "issues" event
@@ -64,7 +66,7 @@ def on_issues(data):
     logging.debug("Received issues event.")
     timestamp = datetime.datetime.utcnow().isoformat()
     attributes = set_message_attributes('Github repo', timestamp, 'issues')
-    send_to_sqs(attributes, data)
+    send_to_sqs(attributes, json.dumps(data))
 
 
 # Define a handler for the "issue_comment" event
@@ -74,7 +76,7 @@ def on_issue_comment(data):
     timestamp = datetime.datetime.utcnow().isoformat()
     attributes = set_message_attributes('Github repo', timestamp,
                                         'issue_comment')
-    send_to_sqs(attributes, data)
+    send_to_sqs(attributes, json.dumps(data))
 
 
 if __name__ == "__main__":
