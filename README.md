@@ -6,10 +6,12 @@ them into an AWS SQS fifo queue for further processing.
 ## Development Environment ##
 You'll need to make sure you have `python 3.6` and `pipenv` installed.
 
-## Install Patched Zappa Library ## You need to use this patched
-version of Zappa until the patch is merged into the next Zappa
-release. Zappa issue #1188 prevents forwarding of events if the header
-is spelled "content-type" instead of "Content-Type".
+## Install Patched Zappa Library ##
+
+You need to use this patched version of Zappa until the patch is
+merged into the next Zappa release. Zappa issue #1188 prevents
+forwarding of events if the header is spelled "content-type" instead
+of "Content-Type".
 
 ``
 pipenv install -e \
