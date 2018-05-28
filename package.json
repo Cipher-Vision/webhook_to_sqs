@@ -1,0 +1,27 @@
+{
+  "name": "webhook_to_sqs",
+  "version": "1.0.0",
+  "description": "This code implements a simple webhook for a Github repository in Python. We process the events as they come in from Github and enqueue them into an AWS SQS fifo queue for further processing.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cipher-Vision/webhook_to_sqs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cipher-Vision/webhook_to_sqs/issues"
+  },
+  "homepage": "https://github.com/Cipher-Vision/webhook_to_sqs#readme",
+  "devDependencies": {
+    "serverless-python-requirements": "^4.0.3",
+    "serverless-wsgi": "^1.4.8"
+  },
+  "dependencies": {
+    "npm": "^6.1.0"
+  }
+}

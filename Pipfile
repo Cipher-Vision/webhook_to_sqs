@@ -6,10 +6,8 @@ name = "pypi"
 [packages]
 
 flask = "*"
-"lispmeister-zappa" = {git = "https://github.com/lispmeister/Zappa.git", editable = true}
 "github-webhook" = "*"
-
-
+"boto3" = "*"
 
 [dev-packages]
 
