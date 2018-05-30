@@ -5,9 +5,21 @@ name = "pypi"
 
 [packages]
 
-flask = "*"
-"github-webhook" = "*"
 "boto3" = "*"
+botocore = "*"
+click = "*"
+docutils = "*"
+Flask = "*"
+github-webhook = "*"
+itsdangerous ="*"
+"Jinja2" = "*"
+jmespath = "*"
+MarkupSafe = "*"
+python-dateutil ="*"
+s3transfer = "*"
+six = "*"
+Werkzeug = "*"
+wheel = "*"
 
 [dev-packages]
 

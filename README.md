@@ -245,3 +245,20 @@ your local machine.
 
     Received issue_comment event.
     Enqueued to SQS.
+
+# Migrate to Serverless Framework
+
+    pipenv install
+    pipenv shell
+    pip freeze > requirements.txt
+
+There's a bug that doesn't resolve all dependencies correctly when
+serverless autogenerates the requirements file during deploy. You
+need to do this:
+
+    mv Pipfile Pipfile.bak
+
+## Deploy
+
+    sls deploy --aws-profile lambda
+

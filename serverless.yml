@@ -11,8 +11,9 @@ custom:
     app: webhook_to_sqs.app
     packRequirements: false
   pythonRequirements:
+#    dockerImage: lambci/lambda:build-python3.6
     dockerizePip: non-linux
-
+    
 provider:
   name: aws
   runtime: python3.6
